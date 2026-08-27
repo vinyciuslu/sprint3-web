@@ -1,0 +1,235 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+section {
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: #F9F8F5;
+    
+}
+
+/* NAV BAR */
+.menu a {
+    color: rgb(94, 94, 94);
+    text-decoration: none;
+    margin-left: 20px;
+    font-family: IBM Plex Sans;
+}
+.meio{
+    border-bottom: solid 0.5px transparent;
+    transition: all .5s ease-in-out;
+    margin-right:40px;
+
+    &:hover{
+        color: rgb(41, 41, 41);
+        border-bottom: solid 0.5px black;
+
+    }
+    
+
+}
+.menu{
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    /* position fixed  precisa de um width e de uma posicao (top)*/
+    z-index: 10;
+    padding: 17px 15px;
+    background-color: #f1f1f1d2;
+    backdrop-filter: blur(8px);
+    /* blackdrop-filter blur coloca blur atras das coisas */;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+
+    border-bottom: solid .5px rgba(128, 128, 128, 0.247);
+}
+#logo{
+    color: black;
+    font-weight: bold;
+    font-family: Montserrat;
+}
+
+#direita{
+    width: 200px;
+    height: 25px;
+    border-radius: 30px;
+}
+#botao-contato {
+    background-color: black;
+    color: white;
+    font-weight: 80px;
+    padding: 5px 30px;
+    border-radius: 30px;
+    width: 170px;
+    transition: all .2s linear;
+
+}
+#botao-contato:hover {
+    background-color: rgb(58, 58, 58);
+}
+/* ------------------------------ */
+
+/* SECAO HERO */
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 112px;
+    margin-top: 30px;
+}
+
+.hero h1 {
+  margin-top: 28px;
+
+  font-family: Sora, "Inter", sans-serif;
+  font-size: clamp(3.1rem, 7vw, 5.4rem);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+
+.hero h1 span{
+    color: #8b9095;
+}
+
+.container {
+    position: relative;
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.grid-inicio {
+    display: grid;
+    
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(0, 0.95fr);
+    align-items: center;
+    gap: 32px;
+}
+
+.conteudo-inicio {
+    max-width: 576px;
+}
+
+.desc-inicio {
+    max-width: 448px;
+    margin-top: 28px;
+    font-size: 22px;
+    line-height: 1.1;
+
+}
+
+.acoes-inicio {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.botao-principal {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 18px 28px;
+    background: #202428;
+    color: white ;
+    font-size: 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.botao-principal:hover {
+    transform: translateY(-5px);
+}
+
+.link-secundario {
+    color: #202428;
+
+    font-size: 16px;
+
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    transition: transform 0.2s ease;
+}
+
+.link-secundario:hover {
+    transform: translateX(4px);
+}
+
+.grade-fundo {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      to right,
+      #e8e8e8 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      #e8e8e8 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  opacity: 0.85;
+
+  pointer-events: none;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 78%
+  );
+}
+
+
+.grade-inicio {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 40px;
+}
+
+.visual-inicio {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  transform: translate(50px, 50px);
+}
+
+.imagem-inicio {
+  /* width: 100%; */
+  max-width: 850px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+    .grid-inicio {
+        grid-template-columns: 1fr;
+    }
+
+    .cell {
+        margin-top: 24px;
+    }
+}
+
+/* ------------------------ */
+/* SECAO SOLUCAO */
+#solucao{
+    background-color: rgb(29, 29, 29);
+}
+
