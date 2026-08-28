@@ -16,15 +16,15 @@ const Contato = () => {
           <div class="formulario">
             <form action="">
               <div class="campo">
-                <label htmlFor="nome"></label>
+                <label htmlFor="nome">Nome</label>
                 <input type="text" id="nome" name="nome" placeholder='Seu Nome' required />
               </div>
               <div class="campo">
-                <label htmlFor="email"></label>
+                <label htmlFor="email">E-mail</label>
                 <input type="email" id="email" name="email" placeholder='email@email.com' required />
               </div>
               <div class="campo">
-                <label htmlFor="mensagem"></label>
+                <label htmlFor="mensagem">Mensagem</label>
                 <textarea id="mensagem" name="mensagem" placeholder='Conte o que você achou do projeto' required></textarea>
               </div>
               <button type='submit'>
