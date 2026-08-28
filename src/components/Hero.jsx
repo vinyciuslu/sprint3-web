@@ -3,7 +3,7 @@
 const Hero = () => {
   return (
   <>
-    <section id="top "class="hero"> 
+    <section id="hero"class="hero"> 
    
     <div class="grade-fundo"></div>
 
@@ -11,6 +11,11 @@ const Hero = () => {
         <div class="grid-inicio">
 
           <div class="conteudo-inicio">
+
+            <p className="titulo">
+              <span className="titulo-linha"></span>
+              Conceito acadêmico · 2026
+            </p>
 
             <h1>
             Sua câmera.
