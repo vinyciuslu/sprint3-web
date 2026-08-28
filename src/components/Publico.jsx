@@ -64,7 +64,7 @@ const Publico = () => {
 
           <div class="publico-image abstract-image">
             <img
-              src="src/assets/gallery-abstract.jpg"
+              src="src/assets/gallery-wide.jpg"
               width={1008}
               height={1008}
               alt=" "

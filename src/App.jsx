@@ -14,6 +14,9 @@ const App = () => {
       <Hero/>
       <Solucao/>
       <Publico/>
+      <Galeria/>
+      <Equipe/>
+      <Contato/>
     </>
   )
 }

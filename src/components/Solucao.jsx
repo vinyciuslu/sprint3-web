@@ -4,9 +4,17 @@ const Solucao = () => {
     <>
       <section id="solucao">
         <div id="cabecalho-solucao">
-
+        
           <div>
-          <h2 id="titulo">Conheça o InterGuide.</h2>
+            <div>
+              <p class="titulo-solucao">
+              <span class="titulo-linha"></span>
+               Solução
+            </p>
+            </div>
+            <div>
+              <h2 id="titulo">Conheça o InterGuide.</h2>
+            </div>
           </div>
 
           <div>
@@ -32,7 +40,7 @@ const Solucao = () => {
         </div>
 
         <div id="img-solucao">
-          <img src="src\assets\solucao.jpg" alt="Celular V70 Jovi" />
+          <img src="src\assets\solucao.png" alt="Celular V70 Jovi" />
         </div>
 
         <div id="legenda-solucao">
