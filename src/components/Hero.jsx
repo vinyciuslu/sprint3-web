@@ -3,7 +3,7 @@
 const Hero = () => {
   return (
   <>
-    <section id="top "class="hero"> 
+    <section id="hero "class="hero"> 
    
     <div class="grade-fundo"></div>
 

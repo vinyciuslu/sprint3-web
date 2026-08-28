@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 section {
@@ -118,8 +119,11 @@ section {
 .desc-inicio {
     max-width: 448px;
     margin-top: 28px;
-    font-size: 22px;
-    line-height: 1.1;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: IBM Plex Sans;
+    color: #5e5e5f;
+
 
 }
 
@@ -230,6 +234,65 @@ section {
 /* ------------------------ */
 /* SECAO SOLUCAO */
 #solucao{
-    background-color: rgb(29, 29, 29);
+    background-color: rgb(22, 22, 22);
+}
+#titulo{
+    color:#F9F8F5;
+    font-family: Sora, "Inter", sans-serif;
+    font-size: 30px;
+    font-size: clamp(2.1rem, 7vw, 4rem);
+}
+#desc-solucao{
+    color: #8b9095;
+    font-size: 16px;
+    font-family: IBM Plex Sans;
+    max-width: 400px;
 }
 
+#cabecalho-solucao{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    padding: 150px 100px;
+}
+
+#conteudo-solucao{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 300px;
+
+}
+#img-solucao img{
+    max-width: 300px;
+    height: 500px;
+}
+#lista, #legenda-solucao{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.item-lista{
+    height: 100px;
+    border-bottom:#5e5e5f solid 1px;
+}
+.item-lista h5{
+    color: #F9F8F5;
+    font-family: Sora, "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    span {
+        color: rgb(0, 173, 196);
+        font-family: JetBrains Mono;
+        font-size: 18px;
+        margin-right:12px;
+
+    }
+}
+.item-lista p{
+    color: #8b9095;
+    margin: 10px 0 0 40px;
+}
