@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -221,6 +225,27 @@ section {
   height: auto;
 }
 
+.titulo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 10px;
+
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.titulo-linha {
+  display: flex;
+  gap: 100px;
+  width: 32px;
+  height: 1px;
+  background: #4a96ed;
+}
+
+
 @media (max-width: 768px) {
     .grid-inicio {
         grid-template-columns: 1fr;
@@ -324,4 +349,183 @@ section {
     color: #8b9095;
     margin: 10px 0;
     font-family: IBM Plex Sans;
+}
+
+.publico {
+  padding: 6rem 0;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.shell {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-inline: 2rem;
+}
+
+.publico-header {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.publico-titulo {
+    /* font-family: ; */
+  max-width: 36rem;
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.03;
+  letter-spacing: -0.045em;
+}
+
+.publico-desc {
+  max-width: 24rem;
+  padding: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.titulo {
+  /* font-family: ; */
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.publico-grid {
+  display: grid;
+  gap: 1px;
+  margin-top: 3.5rem;
+}
+
+
+.publico-rotina {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.75rem;
+}
+
+.publico-rotina-conteudo {
+  margin-top: 2rem;
+}
+
+.publico-hr {
+  /* font-family: ; */
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.publico-text {
+  max-width: 16rem;
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.publico-card {
+  padding: 1.75rem;
+}
+
+.publico-card h3 {
+    /* font-family: ; */
+  margin-top: 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.publico-card > p:last-child {
+  margin-top: 0.625rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.publico-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.publico-image img {
+  display: block;
+  width: 100%;
+  height: 14rem;
+  object-fit: cover;
+}
+
+@media (min-width: 640px) {
+  .publico-header {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    align-items: end;
+    gap: 2.5rem;
+  }
+
+  .publico-titulo {
+    font-size: 2.8rem;
+  }
+
+  .publico-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .publico-image img {
+    height: 100%;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .publico {
+    padding: 9rem 0;
+  }
+
+  .publico-header {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  }
+
+  .publico-titulo {
+    font-size: 3.4rem;
+  }
+
+  .publico-desc {
+    padding-bottom: 0.75rem;
+  }
+
+  .publico-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    margin-top: 5rem;
+  }
+
+  .publico-rotina {
+    grid-column: span 2;
+    grid-row: span 2;
+    padding: 2rem;
+  }
+
+  .desk-image {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .desk-image img {
+    height: 100%;
+  }
+
+  .publico-card {
+    grid-column: span 2;
+    grid-row: span 1;
+    padding: 2rem;
+  }
+
+  .abstract-image {
+    grid-column: span 2;
+  }
+
+  .abstract-image img {
+    height: 100%;
+  }
 }

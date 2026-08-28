@@ -12,6 +12,11 @@ const Hero = () => {
 
           <div class="conteudo-inicio">
 
+            <p className="titulo">
+              <span className="titulo-linha"></span>
+              Conceito acadêmico · 2026
+            </p>
+
             <h1>
             Sua câmera.
             <br />

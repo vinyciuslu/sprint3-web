@@ -13,6 +13,7 @@ const App = () => {
       <Navbar id="Olaaaa"/>
       <Hero/>
       <Solucao/>
+      <Publico/>
     </>
   )
 }
