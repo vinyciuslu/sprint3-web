@@ -33,7 +33,7 @@ const Publico = () => {
 
           <div class="publico-image desk-image">
             <img
-              src="src/assets/gallery-desk.jpg"
+              src="public/gallery-desk.jpg"
               width={1008}
               height={752}
               alt="Caderno, caneta e celular sobre uma mesa de concreto"
@@ -64,7 +64,7 @@ const Publico = () => {
 
           <div class="publico-image abstract-image">
             <img
-              src="src/assets/gallery-wide.jpg"
+              src="public/gallery-wide.jpg"
               width={1008}
               height={1008}
               alt=" "

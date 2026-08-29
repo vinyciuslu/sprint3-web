@@ -46,7 +46,7 @@ const Hero = () => {
            <div class="visual-inicio">
 
         <img
-          src='src/assets/fundo.png'
+          src='public/fundo.png'
           alt="Mockup do InterGuide"
           class="imagem-inicio"
         />

@@ -40,7 +40,7 @@ const Solucao = () => {
         </div>
 
         <div id="img-solucao">
-          <img src="src\assets\solucao.png" alt="Celular V70 Jovi" />
+          <img src="public\solucao.png" alt="Celular V70 Jovi" />
         </div>
 
         <div id="legenda-solucao">
