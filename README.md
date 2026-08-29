@@ -78,4 +78,4 @@ sprint-3/
 
 ## Autor
 
-Projeto acadêmico desenvolvido por Matheus Tamataya, Vinycius Lu, Leonardo Daniel e Bernardo SukJoo
+Projeto acadêmico desenvolvido por Vinycius Lu, Matheus Tamataya, Leonardo Daniel e Bernardo SukJoo
