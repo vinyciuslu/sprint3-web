@@ -25,10 +25,10 @@ const Galeria = () => {
         </div>
 
           <div id="fotos">
-            <img src="public/zeiss.png" alt="" class="imagem" id="galeria-4"/>
-            <img src="public/lente.png" alt="" class="imagem"  id="galeria-1"/>
-            <img src="public/tela.png" alt="" class="imagem" id="galeria-2"/>
-            <img src="public/tela2.png" alt="" class="imagem" id="galeria-3"/>
+            <img src="images/zeiss.png" alt="" class="imagem" id="galeria-4"/>
+            <img src="images/lente.png" alt="" class="imagem"  id="galeria-1"/>
+            <img src="images/tela.png" alt="" class="imagem" id="galeria-2"/>
+            <img src="images/tela2.png" alt="" class="imagem" id="galeria-3"/>
           </div>
 
       </section>
