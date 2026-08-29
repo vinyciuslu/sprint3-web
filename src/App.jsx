@@ -5,6 +5,7 @@ import Galeria from './components/Galeria'
 import Publico from './components/Publico'
 import Solucao from './components/Solucao'
 import Hero from './components/Hero'
+import Footer from './components/Footer'
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
       <Galeria/>
       <Equipe/>
       <Contato/>
+      <Footer/>
     </>
   )
 }

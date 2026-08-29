@@ -2,23 +2,23 @@ const Equipe = () => {
   const membros = [
     {
       nome: "Vinycius Lu",
-      funcao: "DEV",
+      funcao: "Web Designer",
       inicial: "VL",
     },
     {
       nome: "Matheus Tamataya",
-      funcao: "DEV",
+      funcao: "Developer",
       inicial: "MT",
     },
     {
       nome: "Leonardo Daniel",
-      funcao: "Lindo",
+      funcao: "Product Owner",
       inicial: "LD",
     },
     {
-      nome: "Bernardo SukJo",
-      funcao: "pensante",
-      inicial: "BS",
+      nome: "Bernardo Kim",
+      funcao: "Software Engineer",
+      inicial: "BK",
     },
   ];
 

@@ -43,12 +43,12 @@ const Hero = () => {
 
           </div>
 
-           <div className="visual-inicio">
+           <div class="visual-inicio">
 
         <img
           src='src/assets/fundo.png'
           alt="Mockup do InterGuide"
-          className="imagem-inicio"
+          class="imagem-inicio"
         />
 
       </div>
