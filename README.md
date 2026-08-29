@@ -76,6 +76,12 @@ sprint-3/
 └── vite.config.js
 ```
 
+## Site
+
+  <a href="https://sprint3-web-pi.vercel.app/">
+    <strong> Acessar o site do InterGuide</strong>
+  </a>
+
 ## Autor
 
 Projeto acadêmico desenvolvido por Vinycius Lu, Matheus Tamataya, Leonardo Daniel e Bernardo SukJoo
