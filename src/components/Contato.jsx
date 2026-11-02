@@ -11,6 +11,7 @@ const Contato = () => {
 
 const handleSubmit = async (e) => {
   e.preventDefault()
+  setEnviado(false)
 
   const novaMensagem = {
     nome,
@@ -23,10 +24,6 @@ const handleSubmit = async (e) => {
     await enviarMensagem(novaMensagem)
 
     setEnviado(true)
-
-    {enviado && (
-      <p>Mensagem enviada com sucesso!</p>
-    )}
 
     setNome('')
     setEmail('')
@@ -88,7 +85,12 @@ const handleSubmit = async (e) => {
                 Enviar mensagem
               </button>
 
-              {/* {enviado && <p class="confirmacao-envio">Mensagem enviada com sucesso!</p>} */}
+              {enviado && (
+                <p className="confirmacao-envio">
+                  Mensagem enviada com sucesso!
+                </p>
+              )}
+
             </form>
           </div>
       </section>
