@@ -74,6 +74,7 @@ section {
 .nav-direita{
   display: flex;
   align-items: center;
+  gap: 16px;
 }
 
 #botao-contato {
