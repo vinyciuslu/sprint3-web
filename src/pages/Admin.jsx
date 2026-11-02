@@ -1,37 +1,23 @@
 
-import { useState, useEffect} from 'react'
+import { useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
+import useMensagens from '../hooks/useMensagens'
 
 const Admin = () => {
 
- const [mensagens, setMensagens] = useState([])
-const [carregando, setCarregando] = useState(true)
-
-useEffect(() => {
-  const buscarMensagens = async () => {
-    try {
-      const response = await fetch('http://localhost:3001/mensagens')
-
-      if (!response.ok) {
-        throw new Error('Erro ao buscar mensagens')
-      }
-
-      const dados = await response.json()
-      setMensagens(dados)
-
-    } catch (error) {
-      console.error('Erro:', error)
-    } finally {
-      setCarregando(false)
-    }
-  }
-
-  buscarMensagens()
-}, [])
+  const {
+    mensagens,
+    carregando,
+    buscarMensagens
+  } = useMensagens()
 
   const { user, logout } = useAuth()
   const navigate = useNavigate()
+
+  useEffect(() => {
+    buscarMensagens()
+  }, [buscarMensagens])
 
   const handleLogout = () => {
     logout()
@@ -108,64 +94,49 @@ useEffect(() => {
             </p>
           </div>
 
-          {mensagens.length === 0 ? (
+          {carregando ? (
 
-            <div className="p-12 text-center">
-              <p className="text-lg font-medium">
-                Nenhuma mensagem por enquanto.
-              </p>
-              <p className="mt-2 text-sm text-gray-500">
-                As mensagens enviadas pelo formulário aparecerão aqui.
-              </p>
-            </div>
+  <p className="p-6 text-sm text-gray-500">
+    Carregando mensagens...
+  </p>
 
-          ) : (
+) : mensagens.length === 0 ? (
 
-            <div className="divide-y divide-gray-100">
+  <div className="p-12 text-center">
+    <p className="text-lg font-medium">
+      Nenhuma mensagem por enquanto.
+    </p>
+    <p className="mt-2 text-sm text-gray-500">
+      As mensagens enviadas pelo formulário aparecerão aqui.
+    </p>
+  </div>
 
-              {carregando ? (
-                <p className="p-6 text-sm text-gray-500">
-                  Carregando mensagens...
-                </p>
-              ) : mensagens.length === 0 ? (
-                <p className="p-6 text-sm text-gray-500">
-                  Nenhuma mensagem recebida.
-                </p>
-              ) : (
-                mensagens.map((item, index) => (
+) : (
 
-                  <article key={index} className="p-6 transition hover:bg-gray-50">
+  <div className="divide-y divide-gray-100">
+    {mensagens.map((item) => (
+      <article key={item.id} className="p-6 transition hover:bg-gray-50">
 
-                    <div className="flex flex-col justify-between gap-3 sm:flex-row">
+        <div className="flex flex-col justify-between gap-3 sm:flex-row">
+          <div>
+            <h4 className="font-semibold">{item.nome}</h4>
+            <p className="mt-1 text-sm text-gray-500">{item.email}</p>
+          </div>
 
-                      <div>
-                        <h4 className="font-semibold">
-                          {item.nome}
-                        </h4>
+          <span className="text-xs text-gray-400">
+            {new Date(item.data).toLocaleString('pt-BR')}
+          </span>
+        </div>
 
-                        <p className="mt-1 text-sm text-gray-500">
-                          {item.email}
-                        </p>
-                      </div>
+        <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed text-gray-600">
+          {item.mensagem}
+        </p>
 
-                      <span className="text-xs text-gray-400">
-                        {new Date(item.data).toLocaleString('pt-BR')}
-                      </span>
+      </article>
+    ))}
+  </div>
 
-                    </div>
-
-                    <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed text-gray-600">
-                      {item.mensagem}
-                    </p>
-
-                  </article>
-
-                ))
-              )}
-
-            </div>
-
-          )}
+)}
 
         </div>
 

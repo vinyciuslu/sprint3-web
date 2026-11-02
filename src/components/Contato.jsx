@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import useMensagens from '../hooks/useMensagens'
 
 const Contato = () => {
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
   const [mensagem, setMensagem] = useState('')
   const [enviado, setEnviado] = useState(false)
+  const { enviarMensagem } = useMensagens()
 
 
 const handleSubmit = async (e) => {
@@ -18,17 +20,7 @@ const handleSubmit = async (e) => {
   }
 
   try {
-    const response = await fetch('http://localhost:3001/mensagens', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(novaMensagem)
-    })
-
-    if (!response.ok) {
-      throw new Error('Erro ao enviar mensagem')
-    }
+    await enviarMensagem(novaMensagem)
 
     setEnviado(true)
 
