@@ -1,7 +1,29 @@
 
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthContext'
 
 const Login = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
+
+    const { login } = useAuth()
+    const navigate = useNavigate()
+
+    const handleLogin = (e) => {
+        e.preventDefault()
+
+        const success = login(email, password)
+
+        if (success) {
+            navigate('/admin')
+        } else {
+            setError('E-mail ou senha incorretos.')
+        }
+    }
+
   return (
     <main className="login-page min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-[#F9F8F5]">
 
@@ -66,7 +88,7 @@ const Login = () => {
               </p>
             </div>
 
-            <form className="space-y-5">
+            <form className="space-y-5" onSubmit={handleLogin}>
 
               <div>
                 <label
@@ -81,6 +103,8 @@ const Login = () => {
                   type="email"
                   placeholder="seuemail@exemplo.com"
                   className="w-full rounded-xl border border-gray-200 bg-transparent px-4 py-3 outline-none transition focus:border-[#202122] focus:ring-2 focus:ring-[#202122]/10"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}  
                 />
               </div>
 
@@ -97,6 +121,8 @@ const Login = () => {
                   type="password"
                   placeholder="Digite sua senha"
                   className="w-full rounded-xl border border-gray-200 bg-transparent px-4 py-3 outline-none transition focus:border-[#202122] focus:ring-2 focus:ring-[#202122]/10"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
 
@@ -116,9 +142,16 @@ const Login = () => {
 
               </div>
 
+                {error && (
+                <p className="text-sm text-red-600">
+                    {error}
+                </p>
+                )}
+
               <button
                 type="submit"
                 className="login-submit w-full rounded-full bg-[#202122] px-6 py-3.5 font-medium text-white transition hover:bg-black"
+                
               >
                 Entrar →
               </button>

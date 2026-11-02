@@ -1173,3 +1173,12 @@ button {
 .login-page .login-submit:hover {
     background-color: #000000;
 }
+
+.login-page input {
+    color: #202122 !important;
+}
+
+.login-page input::placeholder {
+    color: #9CA3AF !important;
+    opacity: 1;
+}
