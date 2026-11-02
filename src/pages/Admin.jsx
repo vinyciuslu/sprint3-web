@@ -1,13 +1,34 @@
 
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 
 const Admin = () => {
 
-  const [mensagens] = useState(() => {
-    return JSON.parse(localStorage.getItem('mensagens')) || []
-  })
+ const [mensagens, setMensagens] = useState([])
+const [carregando, setCarregando] = useState(true)
+
+useEffect(() => {
+  const buscarMensagens = async () => {
+    try {
+      const response = await fetch('http://localhost:3001/mensagens')
+
+      if (!response.ok) {
+        throw new Error('Erro ao buscar mensagens')
+      }
+
+      const dados = await response.json()
+      setMensagens(dados)
+
+    } catch (error) {
+      console.error('Erro:', error)
+    } finally {
+      setCarregando(false)
+    }
+  }
+
+  buscarMensagens()
+}, [])
 
   const { user, logout } = useAuth()
   const navigate = useNavigate()
@@ -102,35 +123,45 @@ const Admin = () => {
 
             <div className="divide-y divide-gray-100">
 
-              {mensagens.map((item, index) => (
+              {carregando ? (
+                <p className="p-6 text-sm text-gray-500">
+                  Carregando mensagens...
+                </p>
+              ) : mensagens.length === 0 ? (
+                <p className="p-6 text-sm text-gray-500">
+                  Nenhuma mensagem recebida.
+                </p>
+              ) : (
+                mensagens.map((item, index) => (
 
-                <article key={index} className="p-6 transition hover:bg-gray-50">
+                  <article key={index} className="p-6 transition hover:bg-gray-50">
 
-                  <div className="flex flex-col justify-between gap-3 sm:flex-row">
+                    <div className="flex flex-col justify-between gap-3 sm:flex-row">
 
-                    <div>
-                      <h4 className="font-semibold">
-                        {item.nome}
-                      </h4>
+                      <div>
+                        <h4 className="font-semibold">
+                          {item.nome}
+                        </h4>
 
-                      <p className="mt-1 text-sm text-gray-500">
-                        {item.email}
-                      </p>
+                        <p className="mt-1 text-sm text-gray-500">
+                          {item.email}
+                        </p>
+                      </div>
+
+                      <span className="text-xs text-gray-400">
+                        {new Date(item.data).toLocaleString('pt-BR')}
+                      </span>
+
                     </div>
 
-                    <span className="text-xs text-gray-400">
-                      {new Date(item.data).toLocaleString('pt-BR')}
-                    </span>
+                    <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed text-gray-600">
+                      {item.mensagem}
+                    </p>
 
-                  </div>
+                  </article>
 
-                  <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed text-gray-600">
-                    {item.mensagem}
-                  </p>
-
-                </article>
-
-              ))}
+                ))
+              )}
 
             </div>
 

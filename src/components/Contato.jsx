@@ -6,26 +6,44 @@ const Contato = () => {
   const [mensagem, setMensagem] = useState('')
   const [enviado, setEnviado] = useState(false)
 
-const handleSubmit = (e) => {
+
+const handleSubmit = async (e) => {
   e.preventDefault()
 
-  const mensagens = JSON.parse(localStorage.getItem('mensagens')) || []
-  const novaMensagem = { nome, email, mensagem, data: new Date().toISOString() }
-  mensagens.push(novaMensagem)
-  localStorage.setItem('mensagens', JSON.stringify(mensagens))
+  const novaMensagem = {
+    nome,
+    email,
+    mensagem,
+    data: new Date().toISOString()
+  }
 
-  setEnviado(true)
+  try {
+    const response = await fetch('http://localhost:3001/mensagens', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(novaMensagem)
+    })
 
-  alert(
-    'Mensagem enviada com sucesso!\n\n' +
-    'Quer ver as mensagens salvas? Abra o console do navegador (F12) e digite:\n' +
-    "JSON.parse(localStorage.getItem('mensagens'))"
-  )
+    if (!response.ok) {
+      throw new Error('Erro ao enviar mensagem')
+    }
 
-  setNome('')
-  setEmail('')
-  setMensagem('')
+    setEnviado(true)
+
+    alert('Mensagem enviada com sucesso!')
+
+    setNome('')
+    setEmail('')
+    setMensagem('')
+
+  } catch (error) {
+    console.error('Erro:', error)
+    alert('Não foi possível enviar sua mensagem.')
+  }
 }
+
 
   return (
     <>
