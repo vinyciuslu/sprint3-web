@@ -1,7 +1,7 @@
 
 import { useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
+import useAuth from '../hooks/useAuth'
 import useMensagens from '../hooks/useMensagens'
 
 const Admin = () => {
@@ -86,9 +86,19 @@ const Admin = () => {
         <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white">
 
           <div className="border-b border-gray-200 p-6">
-            <h3 className="text-xl font-semibold">
-              Mensagens recebidas
-            </h3>
+            <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
+              <h3 className="text-xl font-semibold">
+                Mensagens recebidas
+              </h3>
+              <button
+                onClick={buscarMensagens}
+                disabled={carregando}
+                className="rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-50 disabled:opacity-50"
+                >
+                {carregando ? 'Atualizando...' : 'Atualizar mensagens'}
+              </button>
+            </div>
+
             <p className="mt-1 text-sm text-gray-500">
               Confira o que os visitantes enviaram.
             </p>

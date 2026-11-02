@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 
-const API_URL = 'http://localhost:3001/mensagens'
+const API_URL = 'https://6ae919001a7b15aaa50fa227.mockapi.io/mensagens'
 
 const useMensagens = () => {
   const [mensagens, setMensagens] = useState([])

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import useMensagens from '../hooks/useMensagens'
 
 const Contato = () => {
@@ -24,7 +24,9 @@ const handleSubmit = async (e) => {
 
     setEnviado(true)
 
-    alert('Mensagem enviada com sucesso!')
+    {enviado && (
+      <p>Mensagem enviada com sucesso!</p>
+    )}
 
     setNome('')
     setEmail('')

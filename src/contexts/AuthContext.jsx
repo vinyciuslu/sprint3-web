@@ -1,31 +1,18 @@
-
-import { createContext, useContext, useState } from 'react'
-
-const AuthContext = createContext()
+import { useState } from 'react'
+import { AuthContext } from './context'
 
 export const AuthProvider = ({ children }) => {
-
   const [user, setUser] = useState(() => {
     const savedUser = localStorage.getItem('interguide-user')
-
     return savedUser ? JSON.parse(savedUser) : null
   })
 
   const login = (email, password) => {
-
     if (email === 'admin@interguide.com' && password === '123456') {
-
-      const userData = {
-        email: email,
-        name: 'Administrador'
-      }
+      const userData = { email: email, name: 'Administrador' }
 
       setUser(userData)
-
-      localStorage.setItem(
-        'interguide-user',
-        JSON.stringify(userData)
-      )
+      localStorage.setItem('interguide-user', JSON.stringify(userData))
 
       return true
     }
@@ -43,8 +30,4 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   )
-}
-
-export const useAuth = () => {
-  return useContext(AuthContext)
 }
