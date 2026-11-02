@@ -31,10 +31,6 @@ const handleSubmit = (e) => {
     <>
       <section id="contato" class="contato">
           <div class="titulo-contato">
-            <p class="titulo-galeria">
-              <span class="titulo-linha"></span>
-              Contato
-            </p>
             <h2 id="titulo-contato">Vamos explorar <br/>novas<br/> possibilidades para a câmera?</h2>
             <p id="desc-contato"> O InterGuide faz parte de um projeto acadêmico aberto para conversas, críticas e colaborações.</p>
             <a href="mailto:vinyciuslu@gmail.com" id="email-contato">contato@interguide.com</a>

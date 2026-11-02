@@ -8,10 +8,6 @@ const Galeria = () => {
         
           <div>
             <div>
-              <p class="titulo-galeria">
-              <span class="titulo-linha"></span>
-               Galeria
-            </p>
             </div>
             <div>
               <h2 id="titulo">Referência visual</h2>
