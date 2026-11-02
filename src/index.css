@@ -1147,3 +1147,29 @@ button {
     gap: 2rem;
   }
 }
+
+/* LOGIN - ajustes para evitar conflitos com o CSS global */
+
+.login-page .login-panel {
+    background-color: #202122;
+    color: #ffffff;
+}
+
+.login-page .login-panel h1 {
+    color: #ffffff;
+}
+
+.login-page .login-panel p {
+    color: #d1d5db;
+}
+
+.login-page .login-submit {
+    background-color: #202122;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.login-page .login-submit:hover {
+    background-color: #000000;
+}
