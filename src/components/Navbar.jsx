@@ -37,9 +37,12 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <button className="menu-lista" 
+        <button
+        type="button"
+        className="menu-lista" 
         onClick={() => setMenuAberto(!menuAberto)}
-        aria-label='Abrir menu'
+        aria-label={menuAberto ? 'Fechar menu' : 'Abrir menu'}
+        aria-expanded={menuAberto}
         >
           <span></span>
           <span></span>
