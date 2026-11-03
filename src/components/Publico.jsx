@@ -3,35 +3,35 @@
 const Publico = () => {
   return (
     <>
-    <section id="publico" class="publico">
-    <div class="shell">
-        <div class="publico-header">
-          <h2 class="publico-titulo">
+    <section id="publico" className="publico">
+    <div className="shell">
+        <div className="publico-header">
+          <h2 className="publico-titulo">
             Pensado para quem está sempre aprendendo.
           </h2>
 
-          <p class="publico-desc">
+          <p className="publico-desc">
             Estudantes em tempo integral vivem entre salas, deslocamentos e
             materiais soltos. O InterGuide nasce dessa rotina — não de uma tela
             a mais.
           </p>
         </div>
 
-        <div class="publico-grid">
-          <div class="publico-rotina">
-            <p class="titulo">Rotina</p>
+        <div className="publico-grid">
+          <div className="publico-rotina">
+            <p className="titulo">Rotina</p>
 
-            <div class="publico-rotina-conteudo">
-              <p class="publico-hr">8h</p>
+            <div className="publico-rotina-conteudo">
+              <p className="publico-hr">8h</p>
 
-              <p class="publico-text">
+              <p className="publico-text">
                 de dia acadêmico contínuo, com pouco espaço para parar e
                 organizar informação.
               </p>
             </div>
           </div>
 
-          <div class="publico-image desk-image">
+          <div className="publico-image desk-image">
             <img
               src="images/gallery-desk.jpg"
               width={1008}
@@ -40,8 +40,8 @@ const Publico = () => {
             />
           </div>
 
-          <div class="publico-card">
-            <p class="titulo">Espaços</p>
+          <div className="publico-card">
+            <p className="titulo">Espaços</p>
 
             <h3>Muitos ambientes por dia</h3>
 
@@ -51,8 +51,8 @@ const Publico = () => {
             </p>
           </div>
 
-          <article class="publico-card">
-            <p class="titulo">Hábito</p>
+          <article className="publico-card">
+            <p className="titulo">Hábito</p>
 
             <h3>A câmera é o primeiro reflexo</h3>
 
@@ -62,7 +62,7 @@ const Publico = () => {
             </p>
           </article>
 
-          <div class="publico-image abstract-image">
+          <div className="publico-image abstract-image">
             <img
               src="images/gallery-wide.jpg"
               width={1008}

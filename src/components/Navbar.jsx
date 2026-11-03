@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav class="menu">
+      <nav className="menu">
 
         <div id="nav-esquerda">
           <a id="logo" href="#hero">
@@ -17,7 +17,7 @@ const Navbar = () => {
           </a>
         </div>
 
-        <div class="nav-meio">
+        <div className="nav-meio">
           <a href="#solucao">Solução</a>
           <a href="#publico">Público-Alvo</a>
           <a href="#galeria">Galeria</a>
@@ -37,7 +37,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <button class="menu-lista" 
+        <button className="menu-lista" 
         onClick={() => setMenuAberto(!menuAberto)}
         aria-label='Abrir menu'
         >
@@ -46,7 +46,7 @@ const Navbar = () => {
           <span></span>
         </button>
 
-        <div class={`menu-cell ${menuAberto ? "aberto" : ""}`}>
+        <div className={`menu-cell ${menuAberto ? "aberto" : ""}`}>
 
           <a href='#solucao' onClick={() => setMenuAberto (false)}> 
             Solução
