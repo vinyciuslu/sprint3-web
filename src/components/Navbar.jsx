@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import useAuth from '../hooks/useAuth'
 
 const Navbar = () => {
 
   const [menuAberto, setMenuAberto] = useState(false)
+  const { user } = useAuth()
 
   return (
     <>
@@ -21,10 +24,17 @@ const Navbar = () => {
           <a href="#equipe">Equipe</a>
         </div>
 
-        <div class="nav-direita">
+        <div className="nav-direita">
           <a id="botao-contato" href="#contato">
             Contate-nos
           </a>
+
+          <Link
+            to={user ? '/admin' : '/login'}
+            id="botao-login"
+          >
+            {user ? 'Painel administrativo' : 'Entrar'}
+          </Link>
         </div>
 
         <button class="menu-lista" 
@@ -52,6 +62,13 @@ const Navbar = () => {
             Equipe
           </a>
 
+          <Link
+            to={user ? '/admin' : '/login'}
+            onClick={() => setMenuAberto(false)}
+          >
+            {user ? 'Painel administrativo' : 'Entrar'}
+          </Link>
+                    
           <a 
             href='#contato'
             id='botao-contato-cell'

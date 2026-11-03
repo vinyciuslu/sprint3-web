@@ -1,25 +1,27 @@
-import Navbar from './components/Navbar'
-import Contato from './components/Contato'
-import Equipe from './components/Equipe'
-import Galeria from './components/Galeria'
-import Publico from './components/Publico'
-import Solucao from './components/Solucao'
-import Hero from './components/Hero'
-import Footer from './components/Footer'
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Admin from './pages/Admin'
+import { AuthProvider } from './contexts/AuthContext.jsx'
+import ProtectedRoute from './components/ProtectedRoute'
 
 const App = () => {
   return (
-    <>
-      <Navbar id="Olaaaa"/>
-      <Hero/>
-      <Solucao/>
-      <Publico/>
-      <Galeria/>
-      <Equipe/>
-      <Contato/>
-      <Footer/>
-    </>
+    <AuthProvider> 
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={
+            <ProtectedRoute>
+              <Admin />
+            </ProtectedRoute>
+          } />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   )
 }
 

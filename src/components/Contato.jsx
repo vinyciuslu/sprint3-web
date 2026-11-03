@@ -1,40 +1,45 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+import useMensagens from '../hooks/useMensagens'
 
 const Contato = () => {
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
   const [mensagem, setMensagem] = useState('')
   const [enviado, setEnviado] = useState(false)
+  const { enviarMensagem } = useMensagens()
 
-const handleSubmit = (e) => {
+
+const handleSubmit = async (e) => {
   e.preventDefault()
+  setEnviado(false)
 
-  const mensagens = JSON.parse(localStorage.getItem('mensagens')) || []
-  const novaMensagem = { nome, email, mensagem, data: new Date().toISOString() }
-  mensagens.push(novaMensagem)
-  localStorage.setItem('mensagens', JSON.stringify(mensagens))
+  const novaMensagem = {
+    nome,
+    email,
+    mensagem,
+    data: new Date().toISOString()
+  }
 
-  setEnviado(true)
+  try {
+    await enviarMensagem(novaMensagem)
 
-  alert(
-    'Mensagem enviada com sucesso!\n\n' +
-    'Quer ver as mensagens salvas? Abra o console do navegador (F12) e digite:\n' +
-    "JSON.parse(localStorage.getItem('mensagens'))"
-  )
+    setEnviado(true)
 
-  setNome('')
-  setEmail('')
-  setMensagem('')
+    setNome('')
+    setEmail('')
+    setMensagem('')
+
+  } catch (error) {
+    console.error('Erro:', error)
+    alert('Não foi possível enviar sua mensagem.')
+  }
 }
+
 
   return (
     <>
       <section id="contato" class="contato">
           <div class="titulo-contato">
-            <p class="titulo-galeria">
-              <span class="titulo-linha"></span>
-              Contato
-            </p>
             <h2 id="titulo-contato">Vamos explorar <br/>novas<br/> possibilidades para a câmera?</h2>
             <p id="desc-contato"> O InterGuide faz parte de um projeto acadêmico aberto para conversas, críticas e colaborações.</p>
             <a href="mailto:vinyciuslu@gmail.com" id="email-contato">contato@interguide.com</a>
@@ -80,7 +85,12 @@ const handleSubmit = (e) => {
                 Enviar mensagem
               </button>
 
-              {/* {enviado && <p class="confirmacao-envio">Mensagem enviada com sucesso!</p>} */}
+              {enviado && (
+                <p className="confirmacao-envio">
+                  Mensagem enviada com sucesso!
+                </p>
+              )}
+
             </form>
           </div>
       </section>

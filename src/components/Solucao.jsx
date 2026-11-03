@@ -7,10 +7,6 @@ const Solucao = () => {
         
           <div>
             <div>
-              <p class="titulo-solucao">
-              <span class="titulo-linha"></span>
-               Solução
-            </p>
             </div>
             <div>
               <h2 id="titulo">Conheça o InterGuide.</h2>

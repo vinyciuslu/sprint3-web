@@ -1,0 +1,59 @@
+{
+  "mensagens": [
+    {
+      "nome": "Teste InterGuide",
+      "email": "teste@interguide.com",
+      "mensagem": "Minha primeira mensagem pela API!",
+      "id": 1
+    },
+    {
+      "nome": "Viny",
+      "email": "vinyciuslu@gmail.com",
+      "mensagem": "Teste numero 3\n",
+      "data": "2026-11-02T21:59:20.346Z",
+      "id": 2
+    },
+    {
+      "nome": "Viny",
+      "email": "email@gmail.com",
+      "mensagem": "Testando novamente \n",
+      "data": "2026-11-02T22:07:55.463Z",
+      "id": 3
+    },
+    {
+      "nome": "teste",
+      "email": "teste@gmail.com",
+      "mensagem": "teste 4\n",
+      "data": "2026-11-02T22:27:50.356Z",
+      "id": 4
+    },
+    {
+      "nome": "teste5",
+      "email": "teste@gmail.com",
+      "mensagem": "teste 5",
+      "data": "2026-11-02T22:30:26.472Z",
+      "id": 5
+    },
+    {
+      "nome": "teste 6",
+      "email": "teste@gmail.com",
+      "mensagem": "teste 6",
+      "data": "2026-11-02T22:54:40.008Z",
+      "id": 6
+    },
+    {
+      "nome": "teste7",
+      "email": "teste@gmail.com",
+      "mensagem": "teste 7",
+      "data": "2026-11-02T22:55:09.395Z",
+      "id": 7
+    },
+    {
+      "nome": "teste8",
+      "email": "teste@gmail.com",
+      "mensagem": "teste 8",
+      "data": "2026-11-02T22:55:41.315Z",
+      "id": 8
+    }
+  ]
+}

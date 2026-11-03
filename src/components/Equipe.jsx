@@ -1,3 +1,5 @@
+import Membro from './Membro'
+
 const Equipe = () => {
   const membros = [
     {
@@ -24,25 +26,23 @@ const Equipe = () => {
 
   return (
     <>
-      <section id="equipe" class="time">
-        <div class="shell">
-          <div class="time-header">
-            <h2 class="time-titulo">Equipe</h2>
+      <section id="equipe" className="time">
+        <div className="shell">
+          <div className="time-header">
+            <h2 className="time-titulo">Equipe</h2>
 
-            <p class="time-subtitulo">Projeto universtário</p>
+            <p className="time-subtitulo">Projeto universtário</p>
           </div>
 
-          <ul class="time-lista">
+          <ul className="time-lista">
             {membros.map((membro) => (
-            <li key={membro.nome} class="time-membro">
-              <span class="time-inicial">
-                {membro.inicial}
-              </span>
-
-              <h3 class="time-nome">{membro.nome}</h3>
-              <p class="time-funcao">{membro.funcao}</p>
-            </li>
-          ))}
+              <Membro
+                key={membro.nome}
+                nome={membro.nome}
+                funcao={membro.funcao}
+                inicial={membro.inicial}
+              />
+            ))}
           </ul>
 
         </div>
