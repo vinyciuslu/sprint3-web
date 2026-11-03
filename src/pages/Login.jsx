@@ -93,12 +93,11 @@ const Login = () => {
             {/* Formulário */}
             <form
               onSubmit={handleLogin}
-              style={{ marginTop: '15px' }}
-              className="flex flex-col gap-8"
+              className="mt-3 flex flex-col gap-5"
             >
 
               {/* E-mail */}
-              <div className="mb-7 gap-10">
+              <div>
                 <label
                   htmlFor="email"
                   className="mb-2 block text-sm font-medium text-[#202122]"
@@ -117,7 +116,7 @@ const Login = () => {
               </div>
 
               {/* Senha */}
-              <div className="mb-7">
+              <div>
                 <label
                   htmlFor="password"
                   className="mb-2 block text-sm font-medium text-[#202122]"
@@ -136,7 +135,7 @@ const Login = () => {
               </div>
 
               {/* Opções */}
-              <div className="mb-7 flex items-center justify-between gap-3 text-sm">
+              <div className="mt-2 flex items-center justify-between gap-3 text-sm">
 
                 <label className="flex items-center gap-2 text-gray-600">
                   <input type="checkbox" className="accent-[#202122]" />
@@ -145,7 +144,7 @@ const Login = () => {
 
                 <button
                   type="button"
-                  className="font-medium text-[#202122] underline underline-offset-4"
+                  className="mt-2 font-medium text-[#202122] underline underline-offset-4"
                 >
                   Esqueceu a senha?
                 </button>

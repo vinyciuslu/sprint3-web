@@ -19,6 +19,19 @@ const Admin = () => {
     buscarMensagens()
   }, [buscarMensagens])
 
+  // mensagens recebidas hoje
+  const hoje = new Date().toLocaleDateString('pt-BR', {
+    timeZone: 'America/Sao_Paulo'
+  })
+
+  const mensagensHoje = mensagens.filter((item) => {
+    const dataMensagem = new Date(item.data).toLocaleDateString('pt-BR', {
+      timeZone: 'America/Sao_Paulo'
+    })
+
+    return dataMensagem === hoje
+  }).length
+
   const handleLogout = () => {
     logout()
     navigate('/login')
@@ -31,7 +44,7 @@ const Admin = () => {
       <header className="flex items-center justify-between border-b border-gray-200 bg-white px-6 py-5 md:px-10">
         <h1 className="text-2xl font-bold">
           InterGuide<span className="text-gray-400">.</span>
-          <span className="ml-3 text-sm font-normal text-gray-400">
+          <span className="text-sm font-normal text-gray-400">
             Admin
           </span>
         </h1>
@@ -74,9 +87,9 @@ const Admin = () => {
           </div>
 
           <div className="rounded-2xl border border-gray-200 bg-white p-6">
-            <p className="text-sm text-gray-500">Mensagens recebidas</p>
+            <p className="text-sm text-gray-500">Mensagens de hoje</p>
             <p className="mt-3 text-4xl font-semibold">
-              {mensagens.length}
+              {mensagensHoje}
             </p>
           </div>
 
