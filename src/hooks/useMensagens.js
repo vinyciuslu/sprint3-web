@@ -46,11 +46,24 @@ const useMensagens = () => {
     return await response.json()
   }
 
+  const excluirMensagem = async (id) => {
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: 'DELETE'
+  })
+
+  if (!response.ok) {
+    throw new Error('Erro ao excluir mensagem')
+  }
+
+  await buscarMensagens()
+}
+
   return {
     mensagens,
     carregando,
     buscarMensagens,
-    enviarMensagem
+    enviarMensagem,
+    excluirMensagem
   }
 }
 

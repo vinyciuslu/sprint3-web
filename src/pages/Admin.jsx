@@ -9,7 +9,8 @@ const Admin = () => {
   const {
     mensagens,
     carregando,
-    buscarMensagens
+    buscarMensagens,
+    excluirMensagem
   } = useMensagens()
 
   const { user, logout } = useAuth()
@@ -146,9 +147,30 @@ const Admin = () => {
             <p className="mt-1 text-sm text-gray-500">{item.email}</p>
           </div>
 
-          <span className="text-xs text-gray-400">
-            {new Date(item.data).toLocaleString('pt-BR')}
-          </span>
+          <div className="flex flex-col items-end gap-2">
+            <span className="text-xs text-gray-400">
+              {new Date(item.data).toLocaleString('pt-BR')}
+            </span>
+
+            <button
+              onClick={async () => {
+                const confirmar = window.confirm(
+                  'Tem certeza que deseja excluir esta mensagem?'
+                )
+
+                if (confirmar) {
+                  try {
+                    await excluirMensagem(item.id)
+                  } catch (error) {
+                    alert('Não foi possível excluir a mensagem.')
+                    console.error(error)
+                  }
+                }
+              }}
+              className="text-sm font-medium text-red-500 hover:text-red-700"> Excluir mensagem
+            </button>
+          </div>
+
         </div>
 
         <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed text-gray-600">
