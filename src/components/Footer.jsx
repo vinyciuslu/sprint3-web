@@ -21,17 +21,17 @@ const nav = [
 
   return (
     <>
-      <footer class="footer">
+      <footer className="footer">
 
-        <div class="shell">
-            <div class="footer-conteudo">
-                <a href="#hero" class="footer-logo">
-                    <span class="footer-nome">
+        <div className="shell">
+            <div className="footer-conteudo">
+                <a href="#hero" className="footer-logo">
+                    <span className="footer-nome">
                         InterGuide
                     </span>
                 </a>
 
-                <ul class="footer-nav">
+                <ul className="footer-nav">
                     {nav.map((link) => (
                     <li key={link.label}>
                         <a href={link.href}>

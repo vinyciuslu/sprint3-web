@@ -21,15 +21,15 @@ const Solucao = () => {
 
       <div id="conteudo-solucao">
         <div id="lista">
-          <div class="item-lista">
+          <div className="item-lista">
             <h5><span>01</span> Câmera</h5>
             <p>O Gesto que já existe</p>
           </div>
-          <div class="item-lista">
+          <div className="item-lista">
             <h5><span>02</span> Contexto</h5>
             <p>Tudo que está em volta</p>
           </div>
-          <div class="item-lista">
+          <div className="item-lista">
             <h5><span>03</span> Sugestão</h5>
             <p>O próximo passo</p>
           </div>
@@ -40,15 +40,15 @@ const Solucao = () => {
         </div>
 
         <div id="legenda-solucao">
-          <div class="item-legenda">
+          <div className="item-legenda">
             <h5>Camada discreta</h5>
             <p>A interface aparece só quando necessário, e desaparece depois.</p>
           </div>
-          <div class="item-legenda">
+          <div className="item-legenda">
             <h5>Leitura do ambiente</h5>
             <p>O conceito parte do que o estudante já está olhando.</p>
           </div>
-          <div class="item-legenda">
+          <div className="item-legenda">
             <h5>Sem fricção</h5>
             <p>Nenhum passo extra: abrir a câmera é abrir o InterGuide.</p>
           </div>

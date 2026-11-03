@@ -38,15 +38,15 @@ const handleSubmit = async (e) => {
 
   return (
     <>
-      <section id="contato" class="contato">
-          <div class="titulo-contato">
+      <section id="contato" className="contato">
+          <div className="titulo-contato">
             <h2 id="titulo-contato">Vamos explorar <br/>novas<br/> possibilidades para a câmera?</h2>
             <p id="desc-contato"> O InterGuide faz parte de um projeto acadêmico aberto para conversas, críticas e colaborações.</p>
             <a href="mailto:vinyciuslu@gmail.com" id="email-contato">contato@interguide.com</a>
           </div>
-          <div class="formulario">
+          <div className="formulario">
             <form onSubmit={handleSubmit}>
-              <div class="campo">
+              <div className="campo">
                 <label htmlFor="nome">Nome</label>
                 <input
                   type="text"
@@ -58,7 +58,7 @@ const handleSubmit = async (e) => {
                   required
                 />
               </div>
-              <div class="campo">
+              <div className="campo">
                 <label htmlFor="email">E-mail</label>
                 <input
                   type="email"
@@ -70,7 +70,7 @@ const handleSubmit = async (e) => {
                   required
                 />
               </div>
-              <div class="campo">
+              <div className="campo">
                 <label htmlFor="mensagem">Mensagem</label>
                 <textarea
                   id="mensagem"

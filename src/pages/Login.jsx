@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -28,7 +27,7 @@ const Login = () => {
     <main className="login-page min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-[#F9F8F5]">
 
       {/* Painel de apresentação */}
-      <section className="login-panel relative hidden lg:flex flex-col justify-between overflow-hidden bg-[#202122] p-12 text-white">
+      <section className="login-panel relative hidden lg:flex flex-col justify-between overflow-hidden bg-[#202122] p-12 text-white min-h-screen w-full">
 
         <div className="relative z-10">
           <Link to="/" className="text-3xl font-bold tracking-tight">
@@ -72,10 +71,12 @@ const Login = () => {
             </Link>
           </div>
 
-          <div className="rounded-3xl border border-black/5 bg-white/70 p-8 shadow-sm sm:p-10">
+          {/* Card de login */}
+          <div className="rounded-3xl border border-black/5 bg-white/70 p-10 shadow-sm sm:p-12">
 
-            <div className="mb-9 text-center">
-              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#202122] text-2xl font-bold text-white">
+            {/* Cabeçalho */}
+            <div className="flex flex-col items-center gap-4 text-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#202122] text-2xl font-bold text-white">
                 I.
               </div>
 
@@ -83,13 +84,19 @@ const Login = () => {
                 Bem-vindo de volta!
               </h2>
 
-              <p className="mt-2 text-gray-500">
+              <p className="text-gray-500 ">
                 Entre na sua conta InterGuide.
               </p>
+
             </div>
 
-            <form className="space-y-5" onSubmit={handleLogin}>
+            {/* Formulário */}
+            <form
+              onSubmit={handleLogin}
+              className="mt-3 flex flex-col gap-5"
+            >
 
+              {/* E-mail */}
               <div>
                 <label
                   htmlFor="email"
@@ -102,12 +109,13 @@ const Login = () => {
                   id="email"
                   type="email"
                   placeholder="seuemail@exemplo.com"
-                  className="w-full rounded-xl border border-gray-200 bg-transparent px-4 py-3 outline-none transition focus:border-[#202122] focus:ring-2 focus:ring-[#202122]/10"
+                  className="w-full rounded-xl border border-gray-200 bg-transparent px-4 py-3.5 outline-none transition focus:border-[#202122] focus:ring-2 focus:ring-[#202122]/10"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}  
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 
+              {/* Senha */}
               <div>
                 <label
                   htmlFor="password"
@@ -120,13 +128,14 @@ const Login = () => {
                   id="password"
                   type="password"
                   placeholder="Digite sua senha"
-                  className="w-full rounded-xl border border-gray-200 bg-transparent px-4 py-3 outline-none transition focus:border-[#202122] focus:ring-2 focus:ring-[#202122]/10"
+                  className="w-full rounded-xl border border-gray-200 bg-transparent px-4 py-3.5 outline-none transition focus:border-[#202122] focus:ring-2 focus:ring-[#202122]/10"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
 
-              <div className="flex items-center justify-between gap-3 text-sm">
+              {/* Opções */}
+              <div className="mt-2 flex items-center justify-between gap-3 text-sm">
 
                 <label className="flex items-center gap-2 text-gray-600">
                   <input type="checkbox" className="accent-[#202122]" />
@@ -135,37 +144,39 @@ const Login = () => {
 
                 <button
                   type="button"
-                  className="font-medium text-[#202122] underline underline-offset-4"
+                  className="mt-2 font-medium text-[#202122] underline underline-offset-4"
                 >
                   Esqueceu a senha?
                 </button>
 
               </div>
 
-                {error && (
-                <p className="text-sm text-red-600">
-                    {error}
+              {/* Mensagem de erro */}
+              {error && (
+                <p className="mb-5 text-sm text-red-600">
+                  {error}
                 </p>
-                )}
+              )}
 
+              {/* Botão */}
               <button
                 type="submit"
                 className="login-submit w-full rounded-full bg-[#202122] px-6 py-3.5 font-medium text-white transition hover:bg-black"
-                
               >
                 Entrar →
               </button>
 
             </form>
 
-            <div className="mt-8 border-t border-gray-200 pt-6 text-center text-sm text-gray-500">
-              Ainda não tem uma conta?
+            {/* Rodapé do card */}
+            <div className="mt-10 border-t border-gray-200 pt-5 flex flex-wrap items-center justify-center gap-3 text-sm text-gray-500">
+              <span>Ainda não tem uma conta?</span>
 
               <Link
                 to="/"
-                className="ml-1 font-semibold text-[#202122] underline underline-offset-4"
+                className="font-semibold text-[#202122] underline underline-offset-4"
               >
-                Entre em contato
+                Voltar para a página inicial
               </Link>
             </div>
 
